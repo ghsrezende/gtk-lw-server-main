@@ -32,13 +32,16 @@ func Parse(buffer []byte) (string, []byte, error) {
 	case 0x16: // Alarm data
 		response, err = responseAlarm(buffer)
 		return "", response, err
+		//return "", nil, err
 
 	case 0x17: // Location data
 		response, err = responseLocation(buffer)
 		return "", response, err
+		//return "", nil, err
 
 	default:
 		//return "", nil, fmt.Errorf("invalid package type: %X", typePacket)
-		return "", buffer, err
+		//return "", buffer, err
+		return "", nil, err
 	}
 }
