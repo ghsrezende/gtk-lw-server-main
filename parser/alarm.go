@@ -15,7 +15,7 @@ func responseAlarm(buffer []byte) ([]byte, error) {
 	response := []byte{0x78, 0x78, 0x05, 0x16}
 
 	// Extract the data from the input buffer and append it to the response
-	response = append(response, buffer[48:49]...)
+	response = append(response, buffer[48:50]...)
 
 	// Calculate the CRC16 checksum and append it to the response
 	checksum := crc16.Checksum(response[2:6], crc16.CCITTTable)

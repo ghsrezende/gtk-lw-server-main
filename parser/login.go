@@ -17,7 +17,7 @@ func responseLogin(buffer []byte) (string, []byte, error) {
 	response := []byte{0x78, 0x78, 0x05, 0x01}
 
 	// Extract the data from the input buffer and append it to the response
-	response = append(response, buffer[12:13]...)
+	response = append(response, buffer[12:14]...)
 
 	// Calculate the CRC16 checksum and append it to the response
 	checksum := crc16.Checksum(response[2:6], crc16.CCITTTable)
